@@ -94,6 +94,20 @@ html {
 #nextButton img {
     width: 140px;
 }
+@media (max-width: 600px) {
+    #nextButton {
+        width: 110px;
+    }
+
+    #nextButton img {
+        width: 100px;
+    }
+
+    .button-container {
+        bottom: 30px; /* was 50px */
+    }
+}
+
 #menu {
     position: absolute;
     z-index: 200;
@@ -108,6 +122,23 @@ html {
 
 }
 #menu a {padding-right: 10px;}
+
+@media (max-width: 600px) {
+    .heading {
+        top: 6px;
+        left: 6px;
+        padding: 2px 3px;
+    }
+
+    #menu {
+        top: 6px;
+        right: 6px;
+    }
+
+    #menu a {
+        padding-right: 5px;
+    }
+}
 
 .info-panel {
     position: fixed;
@@ -168,6 +199,12 @@ html {
     width: 80%;
     max-width: 800px;
     overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .carousel {
+        width: 95%;
+    }
 }
 
 .carousel img {
