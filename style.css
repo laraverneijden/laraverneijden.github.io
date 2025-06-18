@@ -59,7 +59,7 @@ html {
 
     body,
     html {
-        font-size: 9.7pt;
+        font-size: 12.7pt;
     }
 }
 
@@ -69,7 +69,7 @@ html {
     padding: 4px;
     position: absolute;
     top: 15px;
-    left: 15px;
+    left: 13px;
 
 }
 
@@ -82,7 +82,7 @@ html {
 }
 
 #nextButton {
-    width: 130px;
+    width: 150px;
     height: auto;
     font-size: inherit;
     font-weight: 500;
@@ -92,13 +92,13 @@ html {
     border: none;
 }
 #nextButton img {
-    width: 120px;
+    width: 140px;
 }
 #menu {
     position: absolute;
     z-index: 200;
     top: 15px;
-    right: 15px;
+    right: 5px;
     font-size: inherit;
     overflow: visible;
     display: block;
@@ -112,14 +112,39 @@ html {
 .info-panel {
     position: fixed;
     top: 0;
-    right: -450px; /* Fully hidden */
+    right: 0;
     width: 400px;
-    height: 100%;
+    max-width: 100vw;
+    height: 100vh;
     background-color: orange;
     padding: 20px;
-    transition: right 0.3s ease-in-out;
-    z-index: 500;
-    overflow: scroll;
+    overflow-y: auto;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+
+    /* Add these lines 👇 */
+    box-sizing: border-box;
+    overscroll-behavior: contain;
+}
+
+.info-panel.active {
+    transform: translateX(0);
+}
+
+@media (max-width: 600px) {
+    .info-panel {
+        width: 100vw;
+        padding: 20px; /* safe, because box-sizing is now border-box */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    body,
+    html {
+        font-size: 14.2pt;
+    }
 }
 
 .info-panel.active {
